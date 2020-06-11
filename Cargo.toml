@@ -1,0 +1,26 @@
+[package]
+name = "hidraw_rs"
+version = "0.1.0"
+authors = ["Dominik Boehi <dominik.boehi@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "*"
+libc = "*"
+log = "0.4.8"
+tokio = { version = "0.2.16", features = ["full"] }
+mio = { version = "0.6.0" }
+parse_int = "0.4.0"
+
+[target.'cfg(unix)'.dependencies] 
+nix = "0.17"
+udev = "0.3.0"
+
+[build-dependencies]
+bindgen = "0.53.2"
+
+
+[dev-dependencies]
+structopt = "0.3.14" # For examples
